@@ -4,6 +4,7 @@ import android.view.View
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import app.foca.baseViewModel.BaseViewModel
+import app.foca.database.AppDataBase
 import app.foca.model.Post
 import app.foca.network.PostApi
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -15,6 +16,8 @@ class PostViewModel : BaseViewModel() {
 
     @Inject
     lateinit var postApi : PostApi
+    @Inject
+    lateinit var appDao : AppDataBase
 
     lateinit var subscription : Disposable
     val loadingVisibility : MutableLiveData<Int> = MutableLiveData()

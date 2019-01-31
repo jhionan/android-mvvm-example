@@ -1,7 +1,9 @@
 package app.foca.injection.components
 
+import app.foca.database.AppDataBase
 import app.foca.features.posts.PostViewModel
 import app.foca.injection.modules.NetworkModule
+import app.foca.injection.modules.PostDaoModule
 import dagger.Component
 import javax.inject.Singleton
 
@@ -11,6 +13,7 @@ interface NetworkComponent {
 
 
     fun inject(postViewModel: PostViewModel)
+
 
     @Component.Builder
     interface Builder {
